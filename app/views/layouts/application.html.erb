@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApolloPhotography</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <h1>Apollo Photography</h1>
+      <nav>
+        <%= link_to "Home", root_path, class: "nav-link" %>
+        <%= link_to "Admin Portal", new_photo_path, class: "nav-link" %>
+      </nav>
+    </header>
+    <%= yield %>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <%= Time.current.year %> Apollo360Photography</p>
+    </footer>
+  </body>
+</html>

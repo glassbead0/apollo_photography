@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'gallery', media: 'all' %>
+
+
+<!-- Photo Gallery Section -->
+<section class="photo-gallery">
+  <% @photos.each do |photo| %>
+    <div class="photo-card">
+      <% if photo.image.attached? %>
+        <%= image_tag photo.image, width: "600", class: "photo-image" %>
+      <% end %>
+      <div class="photo-details">
+        <h2><%= photo.title %></h2>
+        <p class="price">Price: $<%= photo.base_price %></p>
+      </div>
+    </div>
+  <% end %>
+</section>
+
