@@ -1,4 +1,14 @@
 class PhotosController < ApplicationController
+
+  def index
+    @photos = Photo.all
+  end
+
+  def show
+    @photo = Photo.find(params[:id])
+    @sizes = @photo.calculate_sizes
+  end
+
   def new
     @photo = Photo.new
   end
@@ -10,10 +20,6 @@ class PhotosController < ApplicationController
     else
       render :new, alert: "Error uploading photo."
     end
-  end
-
-  def index
-    @photos = Photo.all
   end
 
   private

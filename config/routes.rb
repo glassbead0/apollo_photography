@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   
   root 'photos#index'  # Show the photo index as the homepage for now
-  resources :photos, only: [:new, :create, :index]
+  resources :photos, only: [:new, :create, :index, :show] do
+    resources :orders, only: [:create]
+  end
 
 
   get 'welcome/index'

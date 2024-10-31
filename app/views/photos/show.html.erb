@@ -1,0 +1,29 @@
+<div class="photo-show-container">
+  <div class="photo-image-large">
+    <% if @photo.image.attached? %>
+      <%= image_tag @photo.image, class: "large-photo" %>
+    <% end %>
+  </div>
+
+  <div class="photo-options">
+    <h2><%= @photo.title %></h2>
+    <p><%= @photo.description %></p>
+    <p class="price">Base Price: $<%= @photo.base_price.to_i %></p>
+
+    <h3>Select Print Type</h3>
+    <%= form_with url: photo_orders_path(@photo), method: :post, local: true do |form| %>
+      <div class="form-group">
+        <%= form.label :print_type, "Print Type" %>
+        <%= form.select :print_type, options_for_select([["Metal", "metal"], ["Canvas", "canvas"], ["Paper", "paper"]]) %>
+      </div>
+
+      <h3>Select Dimensions</h3>
+      <div class="form-group">
+        <%= form.label :size, "Size" %>
+        <%= form.select :size, options_for_select(@sizes.map { |s| ["#{s[:width]}\" x #{s[:height]}\"", "#{s[:width]}x#{s[:height]}"] }) %>
+      </div>
+
+      <%= form.submit "Add to Cart", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

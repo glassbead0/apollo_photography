@@ -4,15 +4,17 @@
 <!-- Photo Gallery Section -->
 <section class="photo-gallery">
   <% @photos.each do |photo| %>
-    <div class="photo-card">
-      <% if photo.image.attached? %>
-        <%= image_tag photo.image, width: "600", class: "photo-image" %>
-      <% end %>
-      <div class="photo-details">
-        <h2><%= photo.title %></h2>
-        <p class="price">Price: $<%= photo.base_price %></p>
+    <%= link_to photo_path(photo), class: "photo-link" do %>
+      <div class="photo-card">
+        <% if photo.image.attached? %>
+          <%= image_tag photo.image, width: "600", class: "photo-image" %>
+        <% end %>
+        <div class="photo-details">
+          <h2><%= photo.title %></h2>
+          <p class="price">Base Price: <%= number_to_currency(photo.base_price, precision: 0) %></p>
+        </div>
       </div>
-    </div>
+    <% end %>    
   <% end %>
 </section>
 
