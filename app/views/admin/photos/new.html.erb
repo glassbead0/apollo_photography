@@ -3,7 +3,7 @@
 <div class="upload-container">
   <h1>Upload Photo to Sell</h1>
 
-  <%= form_with model: @photo, local: true do |form| %>
+  <%= form_with url: admin_photos_path, model: @photo, local: true do |form| %>
     <div class="form-group">
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control" %>
