@@ -46,6 +46,21 @@ header .nav-link {
   margin-left: 15px;
 }
 
+/* Center the Title */
+.site-title {
+  text-align: center;
+  font-size: 2em;  Adjust font size as needed 
+  font-weight: bold;
+  margin: 20px 0;
+  color: #ccc;
+}
+
+/* Optional: Remove link styling */
+.site-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 /* Footer Styling */
 footer {

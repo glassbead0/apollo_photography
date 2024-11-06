@@ -2,8 +2,16 @@ Rails.application.routes.draw do
 
   
   root 'photos#index'  # Show the photo index as the homepage for now
-  resources :photos, only: [:new, :create, :index, :show] do
+  resources :photos, only: [:index, :show] do
     resources :orders, only: [:create]
+  end
+
+  namespace :admin do
+    resources :photos, only: [:new, :create, :index, :edit, :update, :destroy] do
+      collection do
+        patch :sort # Route for sorting photos
+      end
+    end
   end
 
 

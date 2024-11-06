@@ -1,0 +1,24 @@
+
+<div class="top-bar">
+  <%= link_to "Upload New Photo", new_admin_photo_path, class: "btn btn-primary upload-btn" %>
+</div>
+
+<div class="admin-photo-list">
+  <% @photos.each do |photo| %>
+    <div class="admin-photo-card">
+      <% if photo.image.attached? %>
+        <%= image_tag photo.image, height: "100", class: "admin-photo-thumbnail" %>
+      <% end %>
+
+      <div class="admin-photo-details">
+        <h3 class="admin-photo-title"><%= photo.title %></h3>
+        <p class="admin-photo-status">Status: <%= photo.active ? "Active" : "Inactive" %></p>
+
+        <div class="admin-actions">
+          <%= link_to "Edit", edit_admin_photo_path(photo), class: "btn btn-secondary edit-btn" %>
+          <%= link_to "Delete", admin_photo_path(photo), method: :delete, data: { confirm: "Are you sure you want to delete this photo?" }, class: "btn btn-danger delete-btn" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
