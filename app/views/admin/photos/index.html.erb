@@ -12,7 +12,9 @@
 
       <div class="admin-photo-details">
         <h3 class="admin-photo-title"><%= photo.title %></h3>
-        <p class="admin-photo-status">Status: <%= photo.active ? "Active" : "Inactive" %></p>
+        <p class="">Base Price: <%= photo.base_price %></p>
+        <p class="">Status: <%= photo.active ? "Active" : "Inactive" %></p>
+      </br>
 
         <div class="admin-actions">
           <%= link_to "Edit", edit_admin_photo_path(photo), class: "btn btn-secondary edit-btn" %>

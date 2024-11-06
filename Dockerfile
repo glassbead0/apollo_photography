@@ -2,7 +2,8 @@
 FROM ruby:3.3.5
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn libvips libvips-dev
+
 
 # Set working directory
 WORKDIR /app

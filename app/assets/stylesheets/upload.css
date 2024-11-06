@@ -1,4 +1,4 @@
-/* Photo Upload Page Styling */
+/* Photo Upload/Edit Page Styling */
 .upload-container {
   max-width: 600px;
   margin: 40px auto;
@@ -46,6 +46,27 @@
   margin-top: 5px;
 }
 
+/* Form container styling */
+.form-actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: flex-end; /* Align buttons to the left */
+  justify-content: flex-end; /* Aligns buttons to the right */
+  gap: 10px;                 /* Adds space between buttons */
+  margin-top: 20px;
+}
+
+/* General Button Styling */
+.btn {
+  padding: 10px 15px;
+  font-size: 1em;
+  font-weight: bold;         /* Makes text stand out */
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .btn-primary {
   display: block;
   padding: 10px;
@@ -61,9 +82,21 @@
   background-color: #0056b3;
 }
 
+/* Secondary Button for "Back to Gallery" */
+.btn-secondary {
+  background-color: #6c757d; /* Muted gray */
+  color: #fff !important;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+  color: #ffffff;            /* White text for contrast */
+
+}
+
 .back-link {
   display: block;
-  text-align: center;
+  text-align: right;
   margin-top: 15px;
   color: #007bff;
   text-decoration: none;
@@ -71,5 +104,23 @@
 
 .back-link:hover {
   text-decoration: underline;
+}
+
+.current-photo-container {
+  text-align: center; /* Center the contents */
+  margin-bottom: 20px; /* Space between the thumbnail and the form */
+}
+
+.current-photo-container h4 {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.thumbnail {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 120px;
+  height: auto;
 }
 

@@ -1,6 +1,18 @@
 <%= stylesheet_link_tag 'gallery', media: 'all' %>
 
 
+<section class="bio-section" style="<%= @photo.image.attached? ? "background-image: url(#{url_for(@photo.image)})" : '' %>">
+  <div class="bio-content">
+    <h1>Aaron Glasenapp</h1>
+    <p class="intro">Photographer and Adventurer</p>
+    <p class="bio">
+      Welcome to my photo gallery! These images capture a wide variety of ecosystems across the breathtaking landscapes of the western United States and Canada. I aim to share the rugged beauty, serene landscapes, and hidden gems of our natural world. Each photo tells a story of exploration, a love for the outdoors, and a deep respect and reverence for nature in its most authentic form. I hope these images inspire you to embrace the spirit of adventure.
+    </p>
+  </div>
+</section>
+
+
+
 <!-- Photo Gallery Section -->
 <section class="photo-gallery">
   <% @photos.each do |photo| %>
@@ -11,10 +23,16 @@
         <% end %>
         <div class="photo-details">
           <h2><%= photo.title %></h2>
-          <p class="price">Base Price: <%= number_to_currency(photo.base_price, precision: 0) %></p>
+          <p class="price">Starting at: <%= number_to_currency(photo.base_price, precision: 0) %></p>
         </div>
       </div>
     <% end %>    
   <% end %>
 </section>
+
+
+<!-- Footer -->
+<footer class="footer-section" style="<%= @photo.image.attached? ? "background-image: url(#{url_for(@photo.image)})" : '' %>">
+  <p>&copy; <%= Time.now.year %> Aaron Glasenapp Photography. All rights reserved.</p>
+</footer>
 
