@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+  
   def create
     @photo = Photo.find(params[:photo_id])
 
