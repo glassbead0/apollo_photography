@@ -1,9 +1,61 @@
+/*Bio section styling*/
+
+.bio-section {
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps image fixed as you scroll */
+  position: relative;
+  color: #fff; /* White text for contrast */
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  min-height: 400px;            /* Optional: set a minimum height */
+
+}
+
+.bio-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to improve text readability */
+  z-index: 1;
+}
+
+.bio-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+.bio-section h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.intro {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.bio {
+  font-size: 1em;
+  line-height: 1.6;
+  padding: 0 15px;
+}
 
 
 /* Photo Gallery Styling */
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Increased min-width for larger cards */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increased min-width for larger cards */
   gap: 20px;
   padding: 20px;
 }
@@ -42,4 +94,35 @@
 .price {
   font-weight: bold;
   color: #333;
+}
+
+/* Footer Section with Increased Height */
+.footer-section {
+  padding: 20px;
+  min-height: 1000px; /* Adjust this value for more or less scrolling space */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fixed background image */
+  text-align: center;
+  color: #fff;
+  font-size: 0.9em;
+  position: relative;
+}
+
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  z-index: 1;
+}
+
+.footer-section p {
+  position: relative;
+  z-index: 2; /* Ensures text appears above overlay */
+  margin: 0;
 }

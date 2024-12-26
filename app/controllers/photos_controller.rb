@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.where(active: true).order(:position)
+    @photo = Photo.all.sample
   end
 
   def show

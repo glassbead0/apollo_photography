@@ -1,6 +1,6 @@
 # app/controllers/admin/photos_controller.rb
 module Admin
-  class PhotosController < ApplicationController
+  class PhotosController < Admin::BaseController
     before_action :set_photo, only: [:edit, :update, :destroy]
 
     def new
@@ -17,7 +17,7 @@ module Admin
     end
 
     def index
-      @photos = Photo.order(:position) # Order by position for drag-and-drop sorting
+      @photos = Photo.all
     end
 
     def edit
