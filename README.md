@@ -7,3 +7,5 @@ Requirements:
 * Ruby 3.3.5
 * Docker
 * Postgres (can run in Docker)
+
+![Home Page](sample_screenshot.jpeg)
