@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A rails app to sell photography from my sabbatical travelling the US and Canada
 
-Things you may want to cover:
+Requirements:
 
-* Ruby version
+* Ruby 3.3.5
+* Docker
+* Postgres (can run in Docker)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Home Page](sample_screenshot.jpeg)
